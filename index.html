@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Usman</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0a192f;
+            color: #8892b0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            background-color: #020c1b;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #64ffda;
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ccd6f6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #64ffda;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background-image: url(''); 
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #ccd6f6;
+            margin-bottom: 1rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: #8892b0;
+            margin-bottom: 2rem;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: transparent;
+            border: 1px solid #64ffda;
+            color: #64ffda;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section h3 {
+            font-size: 2rem;
+            color: #ccd6f6;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .projects-grid,
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card,
+        .blog-card {
+            background-color: #112240;
+            padding: 2rem;
+            border-radius: 4px;
+            transition: transform 0.3s;
+            background-image: url('abc.jpeg'); 
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .project-card::before,
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+            z-index: -1;
+        }
+
+        .project-card:hover,
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+                    .project-card {
+                background-color: #112240;
+                padding: 2rem;
+                border-radius: 4px;
+                transition: transform 0.3s;
+                /* Remove or comment the next line to eliminate the background image */
+                background-image: url('abc.jpeg'); 
+                background-size: cover;
+                background-position: center;
+                position: relative;
+            }
+
+            .blog-card {
+                background-color: #112240;
+                padding: 2rem;
+                border-radius: 4px;
+                transition: transform 0.3s;
+                /* Remove the background-image property to leave it blank or use a different one */
+                background-image: none; 
+                background-size: cover;
+                background-position: center;
+                position: relative;
+            }
+
+        .project-card h4,
+        .blog-card h4 {
+            color: #f1f6f7;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p,
+        .blog-card p {
+            color: #f1f6f7;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-stack span {
+            background-color: #233554;
+            color: #64ffda;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            background-color: #112240;
+            border: none;
+            color: #ccd6f6;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #233554;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: #ccd6f6;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #64ffda;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Muhammad Usman</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Hi, I'm Muhammad Usman</h1>
+            <h2>AI/ML Engineer</h2>
+            <p>Passionate about creating intelligent solutions using machine learning and deep learning. Specializing in computer vision, natural language processing, and generative AI.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <section class="section" id="projects">
+        <div class="container">
+            <h3>Featured Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h4>Computer Vision System</h4>
+                    <p>Real-time object detection system using YOLOv5 with 95% accuracy.</p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>PyTorch</span>
+                        <span>OpenCV</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="blog">
+        <div class="container">
+            <h3>Latest Blogs</h3>
+            <div class="blog-grid" id="blogContainer">
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Load blog posts
+        fetch('blog.json')
+            .then(response => response.json())
+            .then(data => {
+                const blogContainer = document.getElementById('blogContainer');
+                data.posts.forEach(post => {
+                    blogContainer.innerHTML += `
+                        <div class="blog-card">
+                            <h4>${post.title}</h4>
+                            <small>${new Date(post.date).toLocaleDateString()}</small>
+                            <p>${post.content.substring(0, 100)}...</p>
+                            <a href="blog-post.html?id=${post.id}" class="btn">Read More</a>
+                        </div>
+                    `;
+                });
+            });
+    </script>
+
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h3>Get In Touch</h3>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/OsAfzal"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/us3"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/OsAfzal"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/OsAfzal"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/OsAfzal"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Muhammad Usman. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you for your message! I will get back to you soon.');
+            form.reset();
+        });
+    </script>
+</body>
+</html>

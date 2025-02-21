@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog CMS</title>
+    <style>
+        .cms-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="cms-container">
+        <h1>Blog Post Editor</h1>
+        <form id="postForm">
+            <div class="form-group">
+                <label>Title:</label>
+                <input type="text" id="postTitle" required>
+            </div>
+            <div class="form-group">
+                <label>Date:</label>
+                <input type="date" id="postDate" required>
+            </div>
+            <div class="form-group">
+                <label>Content:</label>
+                <textarea id="postContent" rows="10" required></textarea>
+            </div>
+            <button type="submit">Save Post</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('postForm');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const newPost = {
+                id: Date.now(),
+                title: document.getElementById('postTitle').value,
+                date: document.getElementById('postDate').value,
+                content: document.getElementById('postContent').value,
+                tags: []
+            };
+
+            // Save to localStorage (for demo purposes)
+            const existingPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+            existingPosts.push(newPost);
+            localStorage.setItem('blogPosts', JSON.stringify(existingPosts));
+            
+            alert('Post saved! (local storage)');
+            form.reset();
+        });
+    </script>
+</body>
+</html>
