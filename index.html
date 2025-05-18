@@ -3,385 +3,663 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Usman</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="fav.png" type="image/x-icon">
+    <title>EcoAI Solutions | Environmental Science & AI Integration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .gradient-bg {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
         }
-
-        body {
-            background-color: #0a192f;
-            color: #8892b0;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        nav {
-            background-color: #020c1b;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            color: #64ffda;
-            font-size: 1.5rem;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #ccd6f6;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #64ffda;
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-            background-image: url(''); 
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        
-
-        .hero h1 {
-            font-size: 3.5rem;
-            color: #ccd6f6;
-            margin-bottom: 1rem;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            color: #8892b0;
-            margin-bottom: 2rem;
-        }
-
-        .hero p {
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: transparent;
-            border: 1px solid #64ffda;
-            color: #64ffda;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-
-        .btn:hover {
-            background-color: rgba(100, 255, 218, 0.1);
-        }
-
-        .section {
-            padding: 5rem 0;
-        }
-
-        .section h3 {
-            font-size: 2rem;
-            color: #ccd6f6;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .projects-grid,
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card,
-        .blog-card {
-            background-color: #112240;
-            padding: 2rem;
-            border-radius: 4px;
-            transition: transform 0.3s;
-            background-image: url('abc.jpeg'); 
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .project-card::before,
-        .blog-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
-            z-index: -1;
-        }
-
-        .project-card:hover,
-        .blog-card:hover {
+        .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-                    .project-card {
-                background-color: #112240;
-                padding: 2rem;
-                border-radius: 4px;
-                transition: transform 0.3s;
-                /* Remove or comment the next line to eliminate the background image */
-                background-image: url('abc.jpeg'); 
-                background-size: cover;
-                background-position: center;
-                position: relative;
-            }
-
-            .blog-card {
-                background-color: #112240;
-                padding: 2rem;
-                border-radius: 4px;
-                transition: transform 0.3s;
-                /* Remove the background-image property to leave it blank or use a different one */
-                background-image: none; 
-                background-size: cover;
-                background-position: center;
-                position: relative;
-            }
-
-        .project-card h4,
-        .blog-card h4 {
-            color: #f1f6f7;
-            margin-bottom: 1rem;
+        .nav-link:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width .3s;
         }
-
-        .project-card p,
-        .blog-card p {
-            color: #f1f6f7;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tech-stack span {
-            background-color: #233554;
-            color: #64ffda;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-
-        .contact {
-            text-align: center;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        input,
-        textarea {
+        .nav-link:hover:after {
             width: 100%;
-            padding: 1rem;
-            background-color: #112240;
-            border: none;
-            color: #ccd6f6;
-            border-radius: 4px;
         }
-
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            border-top: 1px solid #233554;
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
         }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-links a {
-            color: #ccd6f6;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #64ffda;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero h2 {
-                font-size: 2rem;
-            }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
     </style>
 </head>
-<body>
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">Muhammad Usman</a>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#projects">Projects</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact">Contact</a>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-leaf text-emerald-500 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">EcoAI<span class="text-blue-500">Solutions</span></span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#home" class="nav-link px-3 py-2 text-sm font-medium text-gray-900">Home</a>
+                    <a href="#services" class="nav-link px-3 py-2 text-sm font-medium text-gray-900">Services</a>
+                    <a href="#projects" class="nav-link px-3 py-2 text-sm font-medium text-gray-900">Projects</a>
+                    <a href="#about" class="nav-link px-3 py-2 text-sm font-medium text-gray-900">About</a>
+                    <a href="#contact" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300">Get Started</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">Home</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">Services</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">Projects</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">About</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-white bg-blue-600 rounded mx-3">Get Started</a>
             </div>
         </div>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Hi, I'm Muhammad Usman</h1>
-            <h2>AI/ML Engineer</h2>
-            <p>Passionate about creating intelligent solutions using machine learning and deep learning. Specializing in computer vision, natural language processing, and generative AI.</p>
-            <a href="#contact" class="btn">Get In Touch</a>
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Bridging Environmental Science with Cutting-Edge AI</h1>
+                    <p class="text-xl mb-8 opacity-90">Harnessing deep learning and machine learning to solve complex environmental challenges with precision and efficiency.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-100 transition duration-300 text-center">Start Your Project</a>
+                        <a href="#services" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition duration-300 text-center">Our Services</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80" alt="AI and Environment" class="rounded-xl shadow-2xl animate-float max-w-full h-auto">
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="section" id="projects">
-        <div class="container">
-            <h3>Featured Projects</h3>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h4>Computer Vision System</h4>
-                    <p>Real-time object detection system using YOLOv5 with 95% accuracy.</p>
-                    <div class="tech-stack">
-                        <span>Python</span>
-                        <span>PyTorch</span>
-                        <span>OpenCV</span>
+    <!-- Trusted By Section -->
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Specialized Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Combining environmental expertise with advanced AI techniques to deliver actionable insights and solutions.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-satellite-dish text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Satellite Image Segmentation</h3>
+                    <p class="text-gray-600 mb-4">Advanced UNet+ architectures for precise rooftop detection, land cover classification, and environmental monitoring from satellite/aerial imagery.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                            <span>High-accuracy segmentation models</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                            <span>Custom solutions for solar potential analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                            <span>Urban planning applications</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Environmental AI Modeling</h3>
+                    <p class="text-gray-600 mb-4">Machine learning models for climate prediction, pollution tracking, and ecosystem health assessment with explainable AI techniques.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Time-series forecasting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Anomaly detection in sensor networks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Custom model development</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Geospatial Data Analysis</h3>
+                    <p class="text-gray-600 mb-4">Advanced processing of LiDAR, multispectral, and hyperspectral data with deep learning for environmental applications.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                            <span>3D terrain modeling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                            <span>Vegetation health indices</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                            <span>Change detection over time</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-water text-amber-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Hydrological Modeling</h3>
+                    <p class="text-gray-600 mb-4">AI-powered flood prediction, watershed analysis, and water quality assessment with high spatial resolution.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Flood risk mapping</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Sediment transport modeling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Real-time monitoring systems</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-fire text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Wildfire Risk Assessment</h3>
+                    <p class="text-gray-600 mb-4">Predictive models combining satellite data, weather patterns, and historical fire data to assess and mitigate wildfire risks.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                            <span>Fuel load estimation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                            <span>Evacuation route optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                            <span>Early warning systems</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Custom AI Solutions</h3>
+                    <p class="text-gray-600 mb-4">Tailored machine learning pipelines for your specific environmental challenges, from data collection to deployment.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>End-to-end project development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Model optimization & deployment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Continuous learning systems</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Showcase -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Real-world applications of our environmental AI expertise.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Solar Rooftop Project" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Computer Vision</span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full ml-2">Renewable Energy</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Urban Solar Potential Mapping</h3>
+                        <p class="text-gray-600 mb-4">Developed a custom UNet++ architecture for rooftop segmentation across 12 major cities, enabling accurate solar potential assessment for over 2 million buildings.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <i class="fas fa-chart-bar text-blue-500 mr-2"></i>
+                                <span class="text-sm font-medium">98.2% accuracy</span>
+                            </div>
+                            <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition duration-300">View Case Study →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1604276661516-9c26d19251a1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Time Series</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full ml-2">Disaster Prevention</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">AI Flood Forecasting System</h3>
+                        <p class="text-gray-600 mb-4">Created an ensemble model combining LSTM networks with physical hydrology models to predict flood events with 72-hour lead time, reducing false alarms by 40% compared to traditional methods.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-purple-500 mr-2"></i>
+                                <span class="text-sm font-medium">72h early warning</span>
+                            </div>
+                            <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition duration-300">View Case Study →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Mini Project 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-tree text-amber-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">Deforestation Alert System</h4>
+                    <p class="text-gray-600 text-sm">Real-time monitoring of forest cover changes using Sentinel-2 data and change detection algorithms.</p>
+                </div>
+                
+                <!-- Mini Project 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-wind text-emerald-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">Air Quality Prediction</h4>
+                    <p class="text-gray-600 text-sm">Transformer-based model forecasting PM2.5 levels with 90% accuracy 24 hours in advance.</p>
+                </div>
+                
+                <!-- Mini Project 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-fish text-blue-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">Coral Reef Health</h4>
+                    <p class="text-gray-600 text-sm">Multispectral image analysis for bleaching detection and marine ecosystem monitoring.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-300">
+                    View All Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Muhammad Usman</h2>
+                    <p class="text-lg text-gray-600 mb-6">With a Masters in Environmental Science and over 4 years of experience in machine learning applications, I bridge the gap between ecological research and cutting-edge AI technology.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-100 text-blue-600">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Education</h4>
+                                <p class="text-gray-600">Masters in Environmental Science, QAU, Pakistan<br>
+                            
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-emerald-100 text-emerald-600">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Experience</h4>
+                                <p class="text-gray-600">Former Researcher Assistant at COMSATS University<br>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-purple-100 text-purple-600">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Achievements</h4>
+                                <p class="text-gray-600">Published 4 peer-reviewed papers in top journals<br>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="www.instagram.com/OsAfzal" class="text-gray-400 hover:text-blue-600 transition duration-300">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="www.github.com/OsAfzal" class="text-gray-400 hover:text-gray-600 transition duration-300">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="www.x.com/OsAfzal" class="text-gray-400 hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="www.linkedin.com/in/us3" class="text-gray-400 hover:text-orange-600 transition duration-300">
+                            <i class="fab fa-linkedin-in text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Technical Expertise</h3>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-medium text-gray-900 mb-3">Deep Learning Frameworks</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">TensorFlow</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">PyTorch</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Keras</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">ONNX</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-medium text-gray-900 mb-3">Computer Vision</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">UNet++</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Mask R-CNN</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">YOLOv8</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Transformers</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-medium text-gray-900 mb-3">Geospatial Tools</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium">QGIS</span>
+                                <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium">ArcGIS</span>
+                                <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium">GDAL</span>
+                                <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium">Google Earth Engine</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-medium text-gray-900 mb-3">Deployment</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">Docker</span>
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">Kubernetes</span>
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">TF Serving</span>
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">FastAPI</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="blog">
-        <div class="container">
-            <h3>Latest Blogs</h3>
-            <div class="blog-grid" id="blogContainer">
-            </div>
-        </div>
-    </section>
-    
-    <script>
-        // Load blog posts
-        fetch('blog.json')
-            .then(response => response.json())
-            .then(data => {
-                const blogContainer = document.getElementById('blogContainer');
-                data.posts.forEach(post => {
-                    blogContainer.innerHTML += `
-                        <div class="blog-card">
-                            <h4>${post.title}</h4>
-                            <small>${new Date(post.date).toLocaleDateString()}</small>
-                            <p>${post.content.substring(0, 100)}...</p>
-                            <a href="blog-post.html?id=${post.id}" class="btn">Read More</a>
+   
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Harness AI for Your Environmental Challenges?</h2>
+                    <p class="text-xl opacity-90 mb-8">Let's discuss how we can apply cutting-edge machine learning to solve your specific environmental or sustainability goals.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-white bg-opacity-20">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium">Email</h4>
+                                <p class="opacity-90">tipuatt@gmail.com</p>
+                            </div>
                         </div>
-                    `;
-                });
-            });
-    </script>
-
-    <section class="section contact" id="contact">
-        <div class="container">
-            <h3>Get In Touch</h3>
-            <div class="contact-form">
-                <form>
-                    <div class="form-group">
-                        <input type="text" placeholder="Name">
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-white bg-opacity-20">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium">Phone</h4>
+                                <p class="opacity-90">+92 334 6238754</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-white bg-opacity-20">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium">Based in</h4>
+                                <p class="opacity-90">Islamabad, Pakistan | Remote Worldwide</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email">
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-xl shadow-2xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+                        <form>
+                            <div class="mb-6">
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" placeholder="Your name">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" placeholder="your.email@example.com">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="organization" class="block text-sm font-medium text-gray-700 mb-1">Organization</label>
+                                <input type="text" id="organization" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" placeholder="Your company or institution">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="project" class="block text-sm font-medium text-gray-700 mb-1">Project Type</label>
+                                <select id="project" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                                    <option value="">Select a project type</option>
+                                    <option value="segmentation">Image Segmentation</option>
+                                    <option value="prediction">Environmental Prediction</option>
+                                    <option value="monitoring">Monitoring System</option>
+                                    <option value="custom">Custom AI Solution</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Project Details</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" placeholder="Tell us about your project needs, timeline, and budget"></textarea>
+                            </div>
+                            
+                            <div class="flex items-center mb-6">
+                                <input id="privacy" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                <label for="privacy" class="ml-2 block text-sm text-gray-700">
+                                    I agree to the <a href="#" class="text-blue-600 hover:text-blue-800">privacy policy</a>
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="w-full px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <textarea rows="5" placeholder="Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/OsAfzal"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/us3"><i class="fab fa-linkedin"></i></a>
-                <a href="https://x.com/OsAfzal"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com/OsAfzal"><i class="fab fa-instagram"></i></a>
-                <a href="https://facebook.com/OsAfzal"><i class="fab fa-facebook"></i></a>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Muhammad Usman. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">EcoAI Solutions</h3>
+                    <p class="text-gray-400">Bridging environmental science with artificial intelligence for a sustainable future.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Image Segmentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Environmental AI</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Geospatial Analysis</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Custom Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Case Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Research Papers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">API Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition duration-300">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">Subscribe to our newsletter</p>
+                    <div class="mt-2 flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 bg-gray-800 text-white rounded-l focus:outline-none focus:ring-1 focus:ring-blue-500">
+                        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-r transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 EcoAI Solutions. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookies</a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
             });
         });
 
-        // Form submission
+        // Form submission (example)
         const form = document.querySelector('form');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Add your form submission logic here
-            alert('Thank you for your message! I will get back to you soon.');
-            form.reset();
-        });
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                form.reset();
+            });
+        }
     </script>
 </body>
 </html>
